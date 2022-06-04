@@ -10,30 +10,33 @@
 
 '''
 
-# N = [1,5,2,3,4,6,1,7]
+from random import randint
+N = [1, 5, 2, 3, 4, 6, 1, 7]
 
-# def get_up2(nums):
-#     ups = []
-#     minNumber = min(nums)
-#     for i in nums:
-#         if i == minNumber:
-#             ups.append(i)
-#             minNumber += 1
-#         elif i == minNumber + 1:
-#             ups.append(i)
-#             minNumber += 2
-#     return ups
 
-# print(get_up2(N))            
+def get_up2(nums):
+    ups = []
+    minNumber = min(nums)
+    for i in nums:
+        if i == minNumber:
+            ups.append(i)
+            minNumber += 1
+        elif i == minNumber + 1:
+            ups.append(i)
+            minNumber += 2
+    return ups
+
+
+print(get_up2(N))
 
 # Создать и заполнить файл случайными целыми значеничми. Выполнить сортировку содержимого файла по возрастанию.
 
-from random import randint
 
 def main(n):
     with open('RandomNum.txt', 'w+') as ran:
         for _ in range(n):
             ran.write(f'{str(randint(1,100))}\n')
+
 
 N = int(input('Сколько случайных чисел будет храниться в файле? \n'))
 main(N)
